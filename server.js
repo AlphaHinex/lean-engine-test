@@ -21,10 +21,17 @@ var PORT = parseInt(process.env.LC_APP_PORT || 3000);
 //   console.log('Node app is running, port:', PORT);
 // });
 
+console.log('Hello World! Listening port: ' + PORT);
+
 http.createServer(function(req, res) {
-  console.log('Hello World! Listening port: ' + PORT);
-  res.end(JSON.stringify({
-    "runtime": "nodejs-" + process.version,
-    "version": "custom"
-  }));
+  
+  if (req.url === '/__engine/1/ping') {
+    res.end(JSON.stringify({
+      "runtime": "nodejs-" + process.version,
+      "version": "custom"
+    }));
+  } else {
+    res.end('Hello LeanEngine World!');
+  }
+
 }).listen(PORT);
