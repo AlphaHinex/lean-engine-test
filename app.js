@@ -16,6 +16,9 @@ app.use(express.static('public'));
 
 // 加载云代码方法
 // app.use(cloud);
+app.use('hello', function(request, response) {
+  response.success('Hello world!');
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
