@@ -1,4 +1,5 @@
 'use strict';
+// var http = require('http');
 var AV = require('leanengine');
 
 var APP_ID = process.env.LC_APP_ID;
@@ -19,3 +20,9 @@ console.log('PORT: %s', PORT);
 app.listen(PORT, function () {
   console.log('Node app is running, port:', PORT);
 });
+
+// http.createServer(function(req, res) {
+//   console.log('APP_PORT: %s', process.env.LC_APP_PORT);
+//   console.log('Hello World! Listening port: ' + PORT);
+//   res.write('Hello LeanEngine World!');
+// }).listen(PORT);
