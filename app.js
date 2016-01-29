@@ -14,11 +14,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-// 加载云代码方法
-// app.use(cloud);
-app.use('hello', function(request, response) {
+var AV = require('leanengine');
+
+/**
+ * 一个简单的云代码方法
+ */
+var cloud = AV.Cloud.define('hello', function(request, response) {
   response.success('Hello world!');
 });
+
+// 加载云代码方法
+app.use(cloud);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
