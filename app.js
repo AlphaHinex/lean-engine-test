@@ -5,7 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var todos = require('./routes/todos');
-var cloud = require('./cloud');
+// var cloud = require('./cloud');
 
 var app = express();
 

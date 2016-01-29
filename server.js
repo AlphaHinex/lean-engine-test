@@ -10,6 +10,10 @@ AV.initialize(APP_ID, APP_KEY, MASTER_KEY);
 // 如果不希望使用 masterKey 权限，可以将下面一行删除
 //AV.Cloud.useMasterKey();
 
+AV.Cloud.define('hello', function(request, response) {
+  response.success('Hello world!');
+});
+
 var app = require('./app');
 
 // 端口一定要从环境变量 `LC_APP_PORT` 中获取。
