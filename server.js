@@ -25,13 +25,17 @@ console.log('Hello World! Listening port: ' + PORT);
 
 http.createServer(function(req, res) {
   
-  // if (req.url === '/__engine/1/ping') {
+  if (req.url === '/__engine/1/ping') {
     res.end(JSON.stringify({
       "runtime": "nodejs-" + process.version,
       "version": "custom"
     }));
-  // } else {
+  } else {
   //   res.end('Hello LeanEngine World!');
-  // }
+    res.end(JSON.stringify({
+      "runtime": "nodejs-" + process.version,
+      "version": "custom"
+    }));
+  }
 
 }).listen(PORT);
