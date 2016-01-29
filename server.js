@@ -26,18 +26,19 @@ console.log('Hello World! Listening port: ' + PORT);
 http.createServer(function(req, res) {
   console.log('url: %s', req.url);
   
-  if (req.url === '/__engine/1/ping') {
-    // res.end(JSON.stringify({
-    //   "runtime": "nodejs-" + process.version,
-    //   "version": "custom"
-    // }));
-    res.end('Hello LeanEngine World!');
-  } else {
-  //   res.end('Hello LeanEngine World!');
+  // if (req.url === '/__engine/1/ping') {
+  if (req.url === '/1.1/functions/_ops/metadatas') {
     res.end(JSON.stringify({
       "runtime": "nodejs-" + process.version,
       "version": "custom"
     }));
+    // res.end('Hello LeanEngine World!');
+  } else {
+    res.end('Hello LeanEngine World!');
+    // res.end(JSON.stringify({
+    //   "runtime": "nodejs-" + process.version,
+    //   "version": "custom"
+    // }));
   }
 
 }).listen(PORT);
