@@ -14,10 +14,7 @@ AV.initialize(APP_ID, APP_KEY, MASTER_KEY);
 // LeanEngine 运行时会分配端口并赋值到该变量。
 var PORT = parseInt(process.env.LC_APP_PORT || 3000);
 http.createServer(function(req, res) {
-  console.log('APP_ID: %s', APP_ID);
-  console.log('APP_KEY: %s', APP_KEY);
-  console.log('MASTER_KEY: %s', MASTER_KEY);
-  console.log('APP_PORT: %s', process.env.LC_APP_MASTER_KEY);
+  console.log('APP_PORT: %s', process.env.LC_APP_PORT);
   console.log('Hello World! Listening port: ' + PORT);
   res.write('Hello LeanEngine World!');
 }).listen(PORT);
